@@ -1,7 +1,11 @@
+inherit_from: .rubocop_todo.yml
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/SymbolArray:
-  EnforcedStyle: brackets
+  EnforcedStyle: percent
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
 Documentation:
   Enabled: false
 Metrics/LineLength:
