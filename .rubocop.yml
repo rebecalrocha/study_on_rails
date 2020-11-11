@@ -1,6 +1,18 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  EnforcedStyle: brackets
 Documentation:
   Enabled: false
+Metrics/LineLength:
+  Max: 200
+Metrics/BlockLength:
+  Max: 150
+Metrics/PerceivedComplexity:
+  Max: 10
+Metrics/MethodLength:
+  Max: 15
+Metrics/CyclomaticComplexity:
+  Max: 10
 AllCops:
   NewCops: enable
-Metrics/LineLength:
-  Max: 150

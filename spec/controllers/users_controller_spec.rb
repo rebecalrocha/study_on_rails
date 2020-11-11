@@ -19,10 +19,10 @@ RSpec.describe UsersController, type: :controller do
   end
 
   it 'should be able to show users by age' do
-    post :create, params: {user: {name: 'UserOne', email: 'user_one@email.com', age: 11 , password: 'password123'}}
-    post :create, params: {user: {name: 'UserTwo', email: 'user_two@email.com', age: 22 , password: 'password123'}}
+    post :create, params: { user: { name: 'UserOne', email: 'user_one@email.com', age: 11, password: 'password123' } }
+    post :create, params: { user: { name: 'UserTwo', email: 'user_two@email.com', age: 22, password: 'password123' } }
 
-    get :index, params: {idade: 11}
+    get :index, params: { idade: 11 }
     response_body = JSON.parse(response.body)
 
     expect(response_body.size).to eql 1
