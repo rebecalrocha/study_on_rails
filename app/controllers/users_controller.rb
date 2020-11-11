@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: %i[show update destroy]
 
   # GET /users
   def index
-    # filter
-    if params[:idade]
-      @users = User.where(age: params[:idade])
-    else
-      @users = User.all
-    end
+    # filter by age
+    @users = if params[:idade]
+               User.where(age: params[:idade])
+             else
+               User.all
+             end
     render json: @users
   end
 
@@ -43,13 +45,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :age)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow specified parameters
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :age)
+  end
 end

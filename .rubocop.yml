@@ -1,0 +1,6 @@
+Documentation:
+  Enabled: false
+AllCops:
+  NewCops: enable
+Metrics/LineLength:
+  Max: 150
