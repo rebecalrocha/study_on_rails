@@ -1,0 +1,162 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/liven/Documents/events/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          16,
+          null,
+          16,
+          12,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          1,
+          5,
+          4,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          21,
+          null,
+          null
+        ]
+      },
+      "/home/liven/Documents/events/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/liven/Documents/events/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null
+        ]
+      },
+      "/home/liven/Documents/events/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/liven/Documents/events/app/channels/application_cable/channel.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/liven/Documents/events/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/liven/Documents/events/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/liven/Documents/events/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1605106796
+  }
+}
