@@ -16,6 +16,6 @@ class ApplicationController < ActionController::API
 
   def authenticate_request
     @user = AuthorizeApiRequest.call(request.headers).result
-    raise ApplicationController::NotAuthorized unless @current_user
+    raise ApplicationController::NotAuthorized unless @user
   end
 end
