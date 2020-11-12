@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_request, only: %i[create]
   before_action :set_user, only: %i[show update destroy]
 
   # GET /users
   def index
-    # filter by age
+    # Filter by age
     @users = if params[:idade]
                User.where(age: params[:idade])
              else
