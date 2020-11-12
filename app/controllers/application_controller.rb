@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   before_action :authenticate_request
   attr_reader :user
 
-  NotAuthorized = Class.new(StandardError) # ???
+  NotAuthorized = Class.new(StandardError)
 
   rescue_from ActiveRecord::RecordNotFound do |_exception|
     render json: { errors: 'Not found' }, status: 404

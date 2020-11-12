@@ -1,6 +1,5 @@
 class AuthorizeApiRequest
   prepend SimpleCommand
-  # before_action :decoded_auth_token, only: %i[user]
 
   def initialize(headers = {})
     @headers = headers
