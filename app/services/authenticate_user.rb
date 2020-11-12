@@ -1,5 +1,5 @@
 class AuthenticateUser
-  # Module that has hash errors and allows to execute class' new and call together in call
+  # Module that has hash errors and allows to execute class' new and call together just using call
   prepend SimpleCommand
   attr_accessor :user
 

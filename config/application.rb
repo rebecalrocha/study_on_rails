@@ -34,7 +34,7 @@ module Events
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    # Autoload of modules inside the lib folder
+    # Autoload modules inside lib folder
     # So you don't need to user require
     config.autoload_paths << Rails.root.join('lib')
   end
