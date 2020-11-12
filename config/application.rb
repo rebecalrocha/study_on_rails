@@ -35,7 +35,7 @@ module Events
     config.api_only = true
 
     # Autoload modules inside lib folder
-    # So you don't need to user require
+    # So you don't need to use require
     config.autoload_paths << Rails.root.join('lib')
   end
 end
