@@ -8,7 +8,7 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: compact
 Documentation:
   Enabled: false
-Metrics/LineLength:
+Layout/LineLength:
   Max: 200
 Metrics/BlockLength:
   Max: 150

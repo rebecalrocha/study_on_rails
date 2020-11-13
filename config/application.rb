@@ -33,5 +33,9 @@ module Events
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Autoload modules inside lib folder
+    # So you don't need to use require
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
