@@ -37,5 +37,7 @@ module Events
     # Autoload modules inside lib folder
     # So you don't need to use require
     config.autoload_paths << Rails.root.join('lib')
+
+    config.factory_bot.definition_file_paths = ['spec/factories']
   end
 end
