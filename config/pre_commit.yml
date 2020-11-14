@@ -1,4 +1,6 @@
+---
 :warnings_remove: []
-:warnings_add:
-  - :whitespace
-  - :rubocop
+:warnings_add: []
+:checks_remove: []
+:checks_add:
+- :rubocop
