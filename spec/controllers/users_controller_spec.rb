@@ -14,6 +14,8 @@ RSpec.describe UsersController, type: :controller do
     get :index
     response_body = JSON.parse(response.body)
 
+    # Expected to get 3 users:
+    # the user who logged in and the other two who have just been created
     expect(response_body.size).to eql 3
     expect(response.code).to eql '200'
   end
@@ -60,24 +62,28 @@ RSpec.describe UsersController, type: :controller do
   it 'should fail to create when name is not specified' do
     user_params = attributes_for(:user, name: nil)
     post :create, params: { user: user_params }
+
     expect(response.code).to eql '422'
   end
 
   it 'should fail to create when email is not specified' do
     user_params = attributes_for(:user, email: nil)
     post :create, params: { user: user_params }
+
     expect(response.code).to eql '422'
   end
 
   it 'should fail to create when age is not specified' do
     user_params = attributes_for(:user, age: nil)
     post :create, params: { user: user_params }
+
     expect(response.code).to eql '422'
   end
 
   it 'should fail to create when password are not specified' do
     user_params = attributes_for(:user, password: nil)
     post :create, params: { user: user_params }
+
     expect(response.code).to eql '422'
   end
 
@@ -85,13 +91,13 @@ RSpec.describe UsersController, type: :controller do
     user = create(:user)
 
     request.headers['Authorization'] = @token
-    put :update, params: { id: user[:id], user: { name: 'Test' } }
+    put :update, params: { id: user.id, user: { name: 'Test' } }
 
     response_body = JSON.parse(response.body)
 
     expect(response_body['name']).to eql 'Test'
-    expect(response_body['email']).to eql user[:email]
-    expect(response_body['age']).to eql user[:age]
+    expect(response_body['email']).to eql user.email
+    expect(response_body['age']).to eql user.age
     expect(response.code).to eql '200'
   end
 
@@ -99,13 +105,13 @@ RSpec.describe UsersController, type: :controller do
     user = create(:user)
 
     request.headers['Authorization'] = @token
-    put :update, params: { id: user[:id], user: { email: 'test@email.com' } }
+    put :update, params: { id: user.id, user: { email: 'test@email.com' } }
 
     response_body = JSON.parse(response.body)
 
-    expect(response_body['name']).to eql user[:name]
+    expect(response_body['name']).to eql user.name
     expect(response_body['email']).to eql 'test@email.com'
-    expect(response_body['age']).to eql user[:age]
+    expect(response_body['age']).to eql user.age
     expect(response.code).to eql '200'
   end
 
@@ -113,27 +119,13 @@ RSpec.describe UsersController, type: :controller do
     user = create(:user)
 
     request.headers['Authorization'] = @token
-    put :update, params: { id: user[:id], user: { age: 23 } }
+    put :update, params: { id: user.id, user: { age: 23 } }
 
     response_body = JSON.parse(response.body)
 
-    expect(response_body['name']).to eql user[:name]
-    expect(response_body['email']).to eql user[:email]
+    expect(response_body['name']).to eql user.name
+    expect(response_body['email']).to eql user.email
     expect(response_body['age']).to eql 23
-    expect(response.code).to eql '200'
-  end
-
-  it 'should be able to update a user password' do
-    user = create(:user)
-
-    request.headers['Authorization'] = @token
-    put :update, params: { id: user[:id], user: { password: 'password123' } }
-
-    response_body = JSON.parse(response.body)
-
-    expect(response_body['name']).to eql user[:name]
-    expect(response_body['email']).to eql user[:email]
-    expect(response_body['age']).to eql user[:age]
     expect(response.code).to eql '200'
   end
 
@@ -141,7 +133,7 @@ RSpec.describe UsersController, type: :controller do
     user = create(:user)
 
     request.headers['Authorization'] = @token
-    put :update, params: { id: user[:id], user: { email: 'test@email' } }
+    put :update, params: { id: user.id, user: { email: 'test@email' } }
 
     response_body = JSON.parse(response.body)
 
@@ -153,7 +145,7 @@ RSpec.describe UsersController, type: :controller do
     user = create(:user)
 
     request.headers['Authorization'] = @token
-    delete :destroy, params: { id: user[:id] }
+    delete :destroy, params: { id: user.id }
 
     expect(response.code).to eql '204'
   end
